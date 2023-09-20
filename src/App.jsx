@@ -1,4 +1,4 @@
-
+import NewsContainer from './Compnonets/NewsContainer'
 
 import  { Component } from 'react'
 import NavBar from './Compnonets/NavBar'
@@ -9,6 +9,7 @@ export default class App extends Component {
       <div>
       
         <NavBar/>
+        <NewsContainer/>
         
       </div>
     )
