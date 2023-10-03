@@ -9,8 +9,7 @@ export class NewsItem extends Component {
     category: "general",
   };
   static propTypes = {
-  title: PropTypes.string.isRequired,
-  descrption: PropTypes.string.isRequired,
+  
   pageSize: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
@@ -83,7 +82,7 @@ export class NewsItem extends Component {
     });
   };
   render() {
-    let { title, descrption, imageurl, Url } = this.props;
+   
 
     return (
       <div>
