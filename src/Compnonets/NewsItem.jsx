@@ -88,7 +88,9 @@ export class NewsItem extends Component {
       <div>
         <div className="container px-5">
           <div className="row">
-            <h1 className="my-5 text-center">Top Newsdose Headlines</h1>
+            <h1 className="my-5 text-center text-capitalize">
+              Top Newsdose {this.props.category} Headlines
+            </h1>
             <div className="col">
               {this.state.loading && <Spinner />}
               {!this.state.loading &&
@@ -109,7 +111,7 @@ export class NewsItem extends Component {
                             <p className="card-text">{e.description}</p>
                             <p className="card-text">
                               <small className="text-body-secondary">
-                                Last updated 3 mins ago
+                                {e.publishedAt}
                               </small>
                             </p>
                             <a href={e.url} className="btn btn-secondary">

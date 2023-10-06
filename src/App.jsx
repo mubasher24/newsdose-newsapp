@@ -1,11 +1,8 @@
+import NewsItem from "./Compnonets/NewsItem";
 
-import NewsItem from './Compnonets/NewsItem';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import  { Component } from 'react'
-import NavBar from './Compnonets/NavBar'
-
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Component } from "react";
+import NavBar from "./Compnonets/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
   render() {
@@ -13,68 +10,60 @@ export default class App extends Component {
       <div>
         <Router>
           <NavBar />
-
-          <Switch>
-            <Route exact path="/">
-              <NewsItem
-                key="general"
-                pageSize="5"
-                country="in"
-                category="general"
-              />
-            </Route>
-            <Route exact path="/business">
-              <NewsItem
-                key='business'
-                pageSize="5"
-                country="in"
-                category="business"
-              />
-            </Route>
-            <Route exact path="/science">
-              <NewsItem
-                key="science"
-                pageSize="5"
-                country="in"
-                category="science"
-              />
-            </Route>
-            <Route exact path="/technology">
-              <NewsItem
-                key="technology"
-                pageSize="5"
-                country="in"
-                category="technology"
-              />
-            </Route>
-            <Route exact path="/sports">
-              <NewsItem
-                key="sports"
-                pageSize="5"
-                country="in"
-                category="sports"
-              />
-            </Route>
-            <Route exact path="/health">
-              <NewsItem
-                key="health"
-                pageSize="5"
-                country="in"
-                category="health"
-              />
-            </Route>
-            <Route exact path="/entertainment">
-              <NewsItem
-                key="entertainment"
-                pageSize="5"
-                country="in"
-                category="entertainment"
-              />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <NewsItem pageSize="10" key="general" category="general" />
+              }
+            />
+            <Route
+              exact
+              path="/business"
+              element={
+                <NewsItem pageSize="10" key="business" category="business" />
+              }
+            />
+            <Route
+              exact
+              path="/science"
+              element={
+                <NewsItem pageSize="10" key="science" category="science" />
+              }
+            />
+            <Route
+              exact
+              path="/technology"
+              element={
+                <NewsItem pageSize="10" key="technology" category="technology" />
+              }
+            />
+            <Route
+              exact
+              path="/sports"
+              element={<NewsItem pageSize="10" key="sports" category="sports" />}
+            />
+            <Route
+              exact
+              path="/health"
+              element={<NewsItem pageSize="10" key="health" category="health" />}
+            />
+            <Route
+              exact
+              path="/entertainment"
+              element={
+                <NewsItem
+                  pageSize="10"
+                  key="entertainment"
+                  category="entertainment"
+                />
+              }
+            />
+           
+          </Routes>
         </Router>
       </div>
     );
   }
 }
-
